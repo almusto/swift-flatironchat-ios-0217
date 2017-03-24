@@ -14,6 +14,7 @@ target 'FlatironChat' do
   use_frameworks!
 
   common
+  pod 'SwiftyJSON'
 
   # Pods for FlatironChat
 

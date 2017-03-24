@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>30884449370-gv478vafdhcnf3bqeat4t3246q2p22ke.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.30884449370-gv478vafdhcnf3bqeat4t3246q2p22ke</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBMh1NkkfQQHydlH73dYRdOz3LKzOcagnI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>30884449370</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.oliverandsandro.FlatironChat</string>
+	<key>PROJECT_ID</key>
+	<string>firechattwo-f5394</string>
+	<key>STORAGE_BUCKET</key>
+	<string>firechattwo-f5394.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:30884449370:ios:caf36a09e8888ac0</string>
+	<key>DATABASE_URL</key>
+	<string>https://firechattwo-f5394.firebaseio.com</string>
+</dict>
+</plist>

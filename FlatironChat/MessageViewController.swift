@@ -16,6 +16,8 @@ class MessageViewController: JSQMessagesViewController  {
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     var messages = [JSQMessage]()
     var channelId = ""
+
+  let firebaseManager = FirebaseManager.shared
     
     
     
@@ -33,7 +35,11 @@ class MessageViewController: JSQMessagesViewController  {
     
     
     func getMessages() {
-        
+
+          firebaseManager.getMessages(forChannel: channelId) { (messages) in
+            self.messages = messages
+            self.collectionView.reloadData()
+      }
     }
     
 
@@ -41,6 +47,8 @@ class MessageViewController: JSQMessagesViewController  {
     
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+
+      firebaseManager.add(message: text, fromUser: senderId, toChannel: channelId)
         
         
         self.finishSendingMessage(animated: true)
@@ -107,7 +115,7 @@ extension MessageViewController {
         case senderId:
             return nil
         default:
-            guard let senderDisplayName = message.senderDisplayName else {
+            guard let senderDisplayName = message.senderId else {
                 assertionFailure()
                 return nil
             }
