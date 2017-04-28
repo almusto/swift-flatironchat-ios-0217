@@ -32,29 +32,19 @@ class MessageViewController: JSQMessagesViewController  {
     }
     
     
-    
-    
     func getMessages() {
-
-          firebaseManager.getMessages(forChannel: channelId) { (messages) in
-            self.messages = messages
-            self.collectionView.reloadData()
-      }
+        firebaseManager.getMessages(forChannel: channelId) { (messages) in
+            DispatchQueue.main.async {
+                self.messages = messages
+                self.collectionView.reloadData()
+            }
+        }
     }
-    
-
-    
-    
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-
-      firebaseManager.add(message: text, fromUser: senderId, toChannel: channelId)
-        
-        
+        firebaseManager.add(message: text, fromUser: senderId, toChannel: channelId)
         self.finishSendingMessage(animated: true)
     }
-    
-    
 
 }
 //MARK: - CollectionView 
@@ -71,7 +61,7 @@ extension MessageViewController {
 }
 
 
-//MARK: - Layout stuff
+//MARK: - Layout
 
 
 extension MessageViewController {
@@ -99,8 +89,7 @@ extension MessageViewController {
             return incomingBubbleImageView
         }
     }
-    
-    
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
     }
